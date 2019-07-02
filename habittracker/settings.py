@@ -31,9 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Third-party
-    'registration',
-
+    
     # Built-in
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core.apps.CoreConfig',
 
     # Third-party
     'debug_toolbar',
+    'registration',
+    
 ]
 
 MIDDLEWARE = [
