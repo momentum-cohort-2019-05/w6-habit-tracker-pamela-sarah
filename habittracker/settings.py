@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Third-party
-    'registration',
+
 
     # Built-in
     'django.contrib.admin',
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Third-party
     'debug_toolbar',
+    'registration',
 ]
 
 MIDDLEWARE = [
