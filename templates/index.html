@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h1>Daily Goal Tracker</h1>
+<h2>Create new goal for {{ goal.name }}</h2>
+<p>Welcome to your daily goal tracker.  Let's get started!</p>
+
+<form action="{% url 'goal-create' goal_pk=goal.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+      <button type="submit">Create goal</button>
+    </p>
+  </form>
+
+{%end block%}
+
+
+
+
+
+

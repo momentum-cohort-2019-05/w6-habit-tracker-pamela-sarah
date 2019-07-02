@@ -20,6 +20,9 @@ from core import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('goal/<int:goal_pk>/goal_create/',
+    core_views.goal_create,
+    name = 'goal-create'),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
 
