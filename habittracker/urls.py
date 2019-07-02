@@ -16,11 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
+from core import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar
