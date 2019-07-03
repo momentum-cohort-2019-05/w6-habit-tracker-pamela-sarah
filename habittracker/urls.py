@@ -16,17 +16,10 @@ Including another URLconf
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
-<<<<<<< HEAD
-from core import views
-
-urlpatterns = [
-    path('', views.index, name='index'),
-=======
 from core import views 
 
 urlpatterns = [
     path('', views.index, name="index"),
->>>>>>> master
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
 
@@ -36,10 +29,14 @@ urlpatterns = [
 from django.views.generic import RedirectView
 urlpatterns += [
     path('', RedirectView.as_view(url='/core/', permanent=True)),
+    path('goals/<int:pk>/',
+        views.GoalDetailView.as_view(),
+        name = 'goal-detail'),
+    path('goals/<int:goal_pk>/create_record/',
+        views.create_record,
+        name='create-record'),
 ]
 
-<<<<<<< HEAD
-=======
 # Use static() to add url mapping to serve static files during development (only)
 from django.conf import settings
 from django.conf.urls.static import static
@@ -48,7 +45,6 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #Add Django site authentication urls (for login, logout, password management)
 #urlpatterns += [
     #path('accounts/', include('django.contrib.auth.urls')),]
->>>>>>> master
 
 if settings.DEBUG:
     import debug_toolbar

@@ -9,7 +9,7 @@ class Goal(models.Model):
     description = models.TextField(help_text="Enter the decription of your goal here")
     date_added = models.DateField(auto_now_add=True)
     daily_target = models.IntegerField(help_text = "Enter a target number for your goal(i.e. 1,000 step per day")
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ["date_added"]
@@ -22,7 +22,7 @@ class DailyRecord(models.Model):
     date_added = models.DateField(auto_now_add=True)
     progress = models.IntegerField(help_text = "Enter your progress here")
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.ForeignKey(Goal, on_delete=models.CASCADE)
+    # name = models.ForeignKey(to=Goal, on_delete=models.CASCADE)
 
     class Meta:
         unique_together = ['owner', 'progress']

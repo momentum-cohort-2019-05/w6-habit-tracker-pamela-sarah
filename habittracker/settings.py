@@ -39,11 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'core',
-=======
     'core.apps.CoreConfig',
->>>>>>> master
 
     # Third-party
     'debug_toolbar',
