@@ -12,4 +12,6 @@ class DailyRecordForm(forms.ModelForm):
 
     class Meta:
         models = DailyRecord
-        fields = ('progress',)
+        fields = ('progress', 'date')
+,
+

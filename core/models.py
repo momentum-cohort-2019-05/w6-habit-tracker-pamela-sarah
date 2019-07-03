@@ -14,6 +14,9 @@ class Goal(models.Model):
     class Meta:
         ordering = ["date_added"]
 
+    def get_absolute_url(self):
+        return reverse('goal-detail', args=[str(self.id)])
+
     def __str__(self):
         return self.name
    

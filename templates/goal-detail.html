@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<p> {{goal.name}} </p>
+
+
+<form action = '/index/' method = "post" >
+    {% csrf_token %}
+    {{ form }}
+    <input type = "submit" value = "Submit">
+
+
+</form> 
+
+{% endblock %}

@@ -16,23 +16,19 @@ Including another URLconf
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
-from core import views 
+from django.views.generic import RedirectView
+from core import views as coreviews
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('goal/<int:goal_pk>/goal_create/',
-    core_views.goal_create,
-    name = 'goal-create'),
+    path('', coreviews.index, name ='index'),
+    path('goals/<int:pk>/', coreviews.GoalDetailView, name ='goal-detail'),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
 
 ]
 
-#Add URL maps to redirect the base URL to our application
-from django.views.generic import RedirectView
-urlpatterns += [
-    path('', RedirectView.as_view(url='/core/', permanent=True)),
-]
+
+
 
 # Use static() to add url mapping to serve static files during development (only)
 from django.conf import settings
