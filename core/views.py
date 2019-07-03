@@ -14,7 +14,7 @@ def index(request):
     goals = Goal.objects.all()
     return render(request, 'index.html')
 
-def GoalDetailView(request, pk):
+def GoalDetailView(self,request,form):
     dailyrecords = DailyRecord.objects.all()
     if request.method == 'POST':
         form = GoalForm(request.POST)

@@ -20,11 +20,11 @@ from django.views.generic import RedirectView
 from core import views as coreviews
 
 urlpatterns = [
-    path('', coreviews.index, name ='index'),
-    path('goals/<int:pk>/', coreviews.GoalDetailView, name ='goal-detail'),
+    
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-
+    path('', coreviews.index, name ='index'),
+    path('goals/<int:pk>/', coreviews.GoalDetailView, name ='goal-detail'),
 ]
 
 
